@@ -19,7 +19,7 @@ soon others ...
 
 Did you like a project and think you can improve it? Contribute as follows:
 
-1. Make the _fork_ of the project (<https://github.com/Joaovjs/front-beauty-projects>)
+1. Make the _fork_ of the project (<https://github.com/Joaovjs/front-beauty-projects/fork>)
 2. Create a _branch_ for your modification (`git checkout -b feature/fooBar`)
 3. Make _commit_ (`git commit -am 'Add some fooBar'`)
 4. _Push_ (`git push origin feature/fooBar`)
