@@ -2,7 +2,7 @@
 
 In this repository I reproduce in code some of the designs that fascinate me in Dribbble.
 
-### List of available projects:**
+### List of available projects:
 * [NG Budget Planning Dashboard](projects/ng-budget-planning-dashboard)
 
 ### Technology
