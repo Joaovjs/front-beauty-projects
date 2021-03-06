@@ -1,0 +1,23 @@
+{
+  "name": "@joaovjs/front-beauty-projects",
+  "version": "1.0.0",
+  "description": "Find in this project the code of several projects inspired by incredible dribbble designs.",
+  "main": "index.js",
+  "scripts": {
+      "lint": "eslint" 
+  },
+  "author": "joaovjs",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  }
+}
