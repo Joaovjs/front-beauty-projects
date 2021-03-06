@@ -1,0 +1,66 @@
+
+/**
+	Colors definition
+**/
+$color-white: 					#ffffff;
+$color-orange:                  #fd823b;
+$color-salmon:                  #ff9a84;
+$color-pink: 					#f583ae;
+$color-pink-light:              #ff94a9;
+$color-green:				 	#45d9d0;
+$color-blue: 					#4f8afa;
+$color-purple: 					#3e58e3;
+$color-dark: 					#2f394e;
+$color-gray: 					#b1b7c8;
+$color-gray-light:              #e5e5e5;
+
+$brand-primary: 				$color-purple;
+
+$color-body-background: 		#e9ecf0;
+$color-border-default: 			#d9dde1;
+
+/**
+	Fonts styles
+**/
+$font-family-default: 			'Poppins', sans-serif;
+
+$font-weight-light: 			300;
+$font-weight-regular: 			400;
+$font-weight-medium: 			500;
+$font-weight-semi: 				600;
+$font-weight-bold: 				700;
+
+$font-size-small: 				13px;
+$font-size-default: 			14px;
+$font-size-medium: 				16px;
+$font-size-large: 				22px;
+
+$font-color-white:				$color-white;
+$font-color-default: 			#b1b4ba;
+$font-color-dark: 			 	#2c2c2c;
+
+/**
+    z-index
+**/
+$z-index-header: 10000;
+$z-index-header-mobile-sidenav: 150000;
+$z-index-header-mobile-mask: 120000;
+
+/**
+    Responsivine screens
+**/
+$screen-max:                 480px !default;
+$screen-sm:                  576px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-md:                  768px !default;
+$screen-md-min:              $screen-md !default;
+$screen-lg:                  960px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-xl:                  1200px !default;
+$screen-xl-min:              $screen-xl !default;
+
+$screen-max:                 ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              ($screen-xl-min - 1) !default;
+$screen-custom-max:              (1400px - 1) !default;

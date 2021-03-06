@@ -1,0 +1,41 @@
+* {
+	@include margin_padding(0, 0);
+    outline: 0;
+    box-sizing: border-box;
+    
+	font-family: $font-family-default;
+}
+
+body {
+	font-weight: $font-weight-regular;
+	font-size: $font-size-default;
+	font-family: $font-family-default;
+	background-color: $color-body-background;
+
+	-webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+	font-weight: $font-weight-regular;
+	font-size: $font-size-medium;
+	font-family: $font-family-default;
+}
+
+button {
+    border: 0px;
+    padding: 0px;
+    background: transparent;
+}
+
+li {
+    list-style-type: none;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: $brand-primary;
+}

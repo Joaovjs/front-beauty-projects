@@ -1,0 +1,111 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.header-space {
+    @include box_info(relative, block, 100%, 86px);
+    margin-bottom: 48px;
+
+    @include screen_tablet {
+        display: none;
+    }
+}
+
+.header {
+    @include box_info(fixed, flex, calc(100% - 112px), 86px);
+    @include margin_padding(0, 0 24px);
+    @include box_shadow(0px 18px 50px -20px rgba($color-dark, 0.13));
+    background-color: $color-white;
+    border-radius: 24px;
+    z-index: $z-index-header;
+
+    align-items: center;
+    justify-content: space-between;
+
+    @include screen_desktop {
+        width: calc(100% - 64px);
+    }
+
+    @include screen_tablet {
+        display: none;
+    }
+
+    &-logo,
+    &-options {
+        @include box_info(relative, flex, 120px, 100%);
+        flex: 0 0 120px;
+        align-items: center;
+    }
+
+    &-options {
+        justify-content: flex-end;
+    }
+
+    &-logo-object {
+        @include box_info(relative, block, 40px, 35px);
+
+        span {
+            @include box_info(absolute, block, 100%, 14px);
+            border-radius: 14px;
+
+            &.top {
+                @include background_gradient(#3854e3, #a283f9);
+            }
+
+            &.bot {
+                width: 14px;
+                bottom: 0px;
+                background-color: #3854e3;
+            }
+        }
+    }
+
+    &-avatar img {
+        @include box_info(relative, block, 56px, 56px);
+        border-radius: 8px;
+    }
+
+    &-notifications {
+        @include box_info(relative, block, 40px, 40px);
+        @include box_icon(40px, 24px, $font-color-default, 0, 0);
+        margin-right: 16px;
+
+        span { line-height: 40px }
+    }
+
+    &-menu {
+        @include box_info(relative, flex, 100%, 100%);
+        align-items: center;
+        justify-content: center;
+
+        li {
+            @include box_info(relative, inline-block, auto, 100%);
+            margin: 0 16px;
+
+            a {
+                @include box_info(relative, flex, 100%, calc(100% + 2px));
+                @include font_style($font-weight-medium, 14px, $font-color-default);
+                @include transition(all .3s ease);
+                @include margin_padding(0, 0 16px);
+                align-items: center;
+
+                &:hover {
+                    color: $font-color-dark;
+                }
+
+                &:after {
+                    @include box_info(absolute, block, 50%, 4px);
+                    @include box_position(auto, auto, 0px, 25%);
+                    background: transparent;
+                    content: '';
+                }
+
+                &.active {
+                    color: $font-color-dark;
+                    font-weight: $font-weight-semi;
+
+                    &:after { background: $brand-primary }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.btn {
+    @include font_style($font-weight-medium, 16px, $font-color-default);
+    @include margin_padding(0 8px, 16px 40px);
+    @include transition(all .3s ease);
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    background: $color-white;
+
+    &:hover {
+        background-color: darken($color-white, 5%);
+    }
+
+    .more {
+        @include box_info(relative, flex, 26px, 26px);
+        @include box_icon(26px, 16px, $font-color-default, 0, 50%);
+        background: darken($color-white, 3%);
+        margin-left: 48px;
+        margin-right: -24px;
+
+        align-items: center;
+        justify-content: center;
+
+        @include screen_mobile {
+            margin-left: 20px;
+        }
+    }
+}
+
+.btn-primary {
+    background: $brand-primary;
+    color: $color-white;
+
+    .more {
+        background: darken($brand-primary, 15%);
+        color: $color-white;
+    }
+
+    &:hover {
+        background-color: darken($brand-primary, 5%);
+    }
+}

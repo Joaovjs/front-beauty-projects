@@ -1,0 +1,118 @@
+@import "../../../../../styles/variables";
+@import "../../../../../styles/mixins";
+
+.budget-card-balance {
+    @include box_info(relative, block, 90%, auto);
+    @include margin_padding(70px auto 32px, 24px 48px);
+    background: $color-white;
+    border-radius: 16px;
+
+    @include screen_desktop {
+        width: 100%;
+        padding: 24px;
+    }
+
+    @include screen_tablet {
+        padding: 24px 16px; 
+    }
+
+    .card {
+        @include box_info(relative, flex, 100%, 175px);
+        @include margin_padding(-74px 0 48px, 24px);
+        @include box_shadow(0px 18px 50px -20px rgba($color-gray, 0.49));
+        border-radius: 16px;
+
+        flex-direction: column;
+        justify-content: space-between;
+        
+        background-image: url(/assets/images/card-mask.png);
+        background-color: $color-gray;
+        background-position: bottom right;
+        background-size: cover;
+
+        .numbers {
+            @include font_style($font-weight-regular, 16px, $font-color-white);
+            letter-spacing: 2px;
+        }
+
+        .name {
+            @include font_style($font-weight-bold, 18px, $font-color-white);
+        }
+    }
+
+    .balance {
+        @include box_info(relative, block, 100%, auto);
+
+        .small {
+            @include box_info(relative, block, 100%, auto);
+            @include font_style($font-weight-regular, 13px, $font-color-default);
+            text-transform: uppercase;
+        }
+
+        .price {
+            @include box_info(relative, flex, 100%, auto);
+            @include font_style($font-weight-light, 32px, $font-color-dark);
+            text-transform: uppercase;
+            margin-bottom: 32px;
+
+            strong {
+                font-weight: $font-weight-bold;
+                margin-right: 16px;
+            }
+        }
+    }
+
+    .comparative {
+        @include box_info(relative, flex, 100%, auto);
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 56px;
+
+        .value {
+            @include box_info(relative, block, 100%, auto);
+            flex: 1;
+            text-align: center;
+            margin: 0 16px;
+
+            .small {
+                @include box_info(relative, block, 100%, auto);
+                @include font_style($font-weight-medium, 13px, $font-color-default);
+                margin-bottom: 8px;
+            }
+
+            .price {
+                @include box_info(relative, block, 100%, auto);
+                @include font_style($font-weight-medium, 26px, $font-color-dark);
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .see-more {
+        @include box_info(absolute, block, 50px, 50px);
+        @include box_position(auto, auto, -25px, 50%);
+        @include box_icon(46px, 24px, $color-white, 2px solid darken($brand-primary, 3%), 50%);
+        transform: translateX(-50%);
+        background: $brand-primary;
+    }
+}
+
+@mixin card_style($color) {
+    .card {
+        @include box_shadow(0px 18px 50px -20px rgba($color, 0.49));
+        background-color: $color;
+    }
+
+    .see-more {
+        border: 2px solid darken($color, 3%);
+        background-color: $color;
+    }
+}
+
+.budget-card-balance.card-dark {
+    @include card_style($color-dark);
+}
+
+.budget-card-balance.card-pink {
+    @include card_style($color-pink-light);
+}

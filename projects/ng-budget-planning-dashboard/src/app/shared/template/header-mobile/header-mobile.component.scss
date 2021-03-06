@@ -1,0 +1,148 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.header-mobile-space {
+    @include box_info(relative, none, 100%, 76px);
+    margin-bottom: 32px;
+
+    @include screen_tablet {
+        display: block;
+    }
+}
+
+.header-mobile {
+    @include box_info(fixed, none, calc(100% - 48px), 76px);
+    @include margin_padding(0, 0 24px);
+    @include box_shadow(0px 18px 50px -20px rgba($color-dark, 0.13));
+    background-color: $color-white;
+    border-radius: 24px;
+    z-index: $z-index-header;
+
+    align-items: center;
+    justify-content: space-between;
+
+    @include screen_tablet {
+        display: flex;
+    }
+
+    @include screen_mobile {
+        width: calc(100% - 32px);
+        display: flex;
+    }
+
+    &-logo,
+    &-options,
+    &-left {
+        @include box_info(relative, flex, auto, 100%);
+        align-items: center;
+    }
+
+    &-left, &-options {
+        width: 115px;
+        flex: 0 0 115px;
+    }
+
+    &-options {
+        justify-content: flex-end;
+    }
+
+    &-logo-object {
+        @include box_info(relative, block, 40px, 35px);
+
+        span {
+            @include box_info(absolute, block, 100%, 14px);
+            border-radius: 14px;
+
+            &.top {
+                @include background_gradient(#3854e3, #a283f9);
+            }
+
+            &.bot {
+                width: 14px;
+                bottom: 0px;
+                background-color: #3854e3;
+            }
+        }
+    }
+
+    &-avatar img {
+        @include box_info(relative, block, 46px, 46px);
+        border-radius: 8px;
+    }
+
+    &-toggle-sidenav {
+        @include box_info(relative, block, 30px, 24px);
+
+        span {
+            @include box_info(absolute, block, 100%, 4px);
+            background-color: $font-color-default;
+            border-radius: 3px;
+
+            &.top { top: 0px }
+            &.mid { top: 10px }
+            &.bot { bottom: 0px }
+        }
+    }
+}
+
+.header-mobile-mask {
+    @include box_info(fixed, none, 100%, 100%);
+    @include box_position(0px, auto, auto, 0px);
+    background-color: rgba($color-dark, .6);
+    z-index: $z-index-header-mobile-mask;
+
+    &.opened { display: block }
+}
+
+.header-mobile-sidenav {
+    @include box_info(fixed, block, 90%, 100%);
+    @include box_position(0px, auto, auto, -100%);
+    @include transition(all .2s ease);
+    overflow: auto;
+    padding: 48px 24px 24px;
+    background-color: $color-white;
+    z-index: $z-index-header-mobile-sidenav;
+
+    &.opened {
+        left: 0px;
+    }
+
+    &-close {
+        @include box_info(absolute, block, 30px, 24px);
+        @include box_position(24px, 24px, auto, auto);
+
+        span {
+            @include box_info(absolute, block, 100%, 4px);
+            background-color: $font-color-default;
+            border-radius: 3px;
+
+            &.top { top: 0px }
+            &.mid { top: 10px }
+            &.bot { bottom: 0px }
+        }
+
+        &.opened span {
+            &.top { top: 50%; transform: rotate(45deg); }
+            &.mid { display: none }
+            &.bot { top: 50%; transform: rotate(-45deg);}
+        }
+    }
+
+    &-menu li {
+        @include box_info(relative, block, 100%, auto);
+        margin-top: 24px;
+        margin-bottom: 16px;
+
+        a {
+            @include box_info(relative, block, 100%, auto);
+            @include font_style($font-weight-medium, 16px, $font-color-default);
+            @include margin_padding(0, 16px 0);
+
+            &.active {
+                font-weight: $font-weight-semi;
+                color: $color-dark;
+                border-bottom: 3px solid $brand-primary;
+            }
+        }
+    }
+}

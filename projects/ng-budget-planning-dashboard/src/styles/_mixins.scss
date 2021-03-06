@@ -1,0 +1,114 @@
+
+
+//*****************************
+// box styles
+@mixin box_info ($position, $display, $width, $height) {
+    position: $position;
+    display: $display;
+    width: $width;
+    height: $height;
+}
+
+@mixin box_position ($top, $right, $bottom, $left) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin margin_padding ($margin, $padding){
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin box_shadow($shadow){
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin box_icon($height, $size, $color, $border, $radius){
+    line-height: $height;
+    font-size: $size;
+    text-align: center;
+    color: $color;
+    border: $border;
+    border-radius: $radius;
+
+    span { line-height: $height }
+}
+
+//*****************************
+// fonts styles
+@mixin font_style($weight, $size, $color, $height: 1.5){
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+	line-height: $height;
+}
+
+@mixin font_block($transform, $decoration, $spacing, $height, $align){
+    text-transform: $transform;
+    text-decoration: $decoration;
+    letter-spacing: $spacing;
+    line-height: $height;
+    text-align: $align;
+}
+
+//*****************************
+// gradients
+@mixin background_gradient($color1, $color2){
+    background: $color1;
+    background: -moz-linear-gradient(45deg, $color1 0%, $color2 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, $color1), color-stop(100%, $color2));
+    background: -webkit-linear-gradient(45deg, $color1 0%, $color2 100%);
+    background: -o-linear-gradient(45deg, $color1 0%, $color2 100%);
+    background: -ms-linear-gradient(45deg, $color1 0%, $color2 100%);
+    background: linear-gradient(45deg, $color1 0%, $color2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2, GradientType=1 );
+}
+
+//*****************************
+// transitions
+@mixin transition($transition){
+    -webkit-transition:$transition;
+    -moz-transition:$transition;
+    -ms-transition:$transition;
+    -o-transition:$transition;
+    transition:$transition;
+}
+
+// *************************************
+// placeholder color
+@mixin placeholder($color){
+  &::-webkit-input-placeholder {color: $color;}
+  &:-moz-placeholder {color: $color;}
+  &::-moz-placeholder {color: $color;}
+  &:-ms-input-placeholder{color: $color;}
+}
+
+//*****************************
+// responsive
+@mixin screen_mobile {
+    @media(max-width: $screen-sm-max) {
+        @content;
+    }
+}
+
+@mixin screen_tablet {
+    @media(max-width: $screen-md-max) {
+        @content;
+    }
+}
+
+@mixin screen_desktop {
+    @media(max-width: $screen-custom-max) {
+        @content;
+    }
+}
+
+@mixin screen_full {
+    @media(min-width: $screen-custom-max) {
+        @content;
+    }
+}

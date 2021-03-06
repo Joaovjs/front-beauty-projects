@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.common-container {
+    @include box_info(relative, block, 100%, auto);
+    @include margin_padding(0, 32px 64px);
+
+    @include screen_desktop {
+        padding: 24px 32px;
+    }
+
+    @include screen_tablet {
+        padding: 16px 24px; 
+    }
+
+    @include screen_mobile {
+        padding: 16px; 
+    }
+}

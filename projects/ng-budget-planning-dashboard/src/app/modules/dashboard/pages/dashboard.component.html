@@ -1,0 +1,46 @@
+<div class="container-fluid px-0">
+    <div class="row d-xl-none">
+        <div class="col">
+            <balance-info></balance-info>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-12 col-md-auto col-xl-3">
+            <budget-info></budget-info>
+        </div>
+        <div class="d-none d-xl-block col-xl-5">
+            <balance-info></balance-info>
+            <div class="d-flex">
+                <button btn btnType="primary" btnMore>
+                    Get a budget
+                </button>
+                <button btn>
+                    Transfer
+                </button>
+                <button btn>
+                    Request
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-md">
+            <expenses-box></expenses-box>
+        </div> 
+    </div>
+    <div class="row mt-5">
+        <div class="d-none d-xl-block col-xl-3" *ngFor="let item of cardsList">
+            <budget-balance-card [type]="item"></budget-balance-card>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 d-xl-none">
+            <div class="d-block">
+                <owl-carousel-o [options]="carouselOptions">
+                    <ng-template carouselSlide *ngFor="let item of cardsList">
+                        <budget-balance-card [type]="item"></budget-balance-card>
+                    </ng-template> 
+                </owl-carousel-o>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+            <user-info></user-info>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+@import "../../../../../styles/variables";
+@import "../../../../../styles/mixins";
+
+.balance-info {
+    @include box_info(relative, flex, 100%, auto);
+    margin: 24px 0 32px;
+    align-items: center;
+
+    .value {
+        @include box_info(relative, flex, auto, auto);
+        @include font_style($font-weight-semi, 64px, $font-color-dark);
+        align-items: flex-start;
+        padding-right: 32px;
+        border-right: 1px solid $color-border-default;
+
+        span {
+            font-weight: $font-weight-medium;
+            font-size: 36px;
+            margin-right: 16px;
+        }
+    }
+
+    .extra-info {
+        @include box_info(relative, block, 100%, auto);
+        @include font_style($font-weight-medium, 32px, $font-color-dark);
+        margin-left: 32px;
+
+        span {
+            @include box_info(relative, block, 100%, auto);
+            @include font_style($font-weight-medium, 14px, $font-color-default);
+        }
+    }
+
+    @include screen_tablet {
+        display: block;
+        background-color: $color-white;
+        padding: 24px;
+        border-radius: 16px;
+
+        .value {
+            font-size: 48px;
+            padding-right: 0px;
+            border-right: 0px;
+
+            span { 
+                font-size: 24px; 
+                margin-right: 8px;
+            }
+        }
+
+        .extra-info {
+            margin-top: 8px;
+            margin-left: 0px;
+        }
+    }
+}

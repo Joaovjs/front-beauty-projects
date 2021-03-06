@@ -1,0 +1,48 @@
+@import "../../../../../styles/variables";
+@import "../../../../../styles/mixins";
+
+.budget-info {
+    @include box_info(relative, block, 308px, 308px);
+    @include margin_padding(48px auto 20px, 24px);
+    border-radius: 32px;
+    background: $color-white;
+
+    &-options {
+        @include box_info(absolute, block, 56px, 56px);
+        @include box_position(-28px, -28px, auto, auto);
+        @include box_icon(56px, 28px, $color-white, 0, 16px);
+        background: $brand-primary;
+
+        @include screen_tablet {
+            @include box_position(-16px, -16px, auto, auto);
+        }
+    }
+
+    &-chart {
+        @include box_info(absolute, block, calc(100% - 48px), calc(100% - 48px));
+        top: 24px; left: 24px;
+    }
+
+    &-chart-min {
+        @include box_info(absolute, block, calc(100% - 96px), calc(100% - 96px));
+        top: 48px; left: 48px;
+    }
+
+    &-value {
+        @include box_info(absolute, flex, calc(100% - 144px), calc(100% - 144px));
+        top: 72px; left: 72px;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include font_style($font-weight-semi, 38px, $color-pink);
+
+        span {
+            display: block;
+            @include font_style($font-weight-medium, 13px, $font-color-default);
+            text-transform: uppercase;
+        }
+    }
+
+}
