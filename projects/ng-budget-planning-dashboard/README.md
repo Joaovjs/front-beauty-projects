@@ -1,27 +1,42 @@
-# NgBudgetPlanningDashboard
+![Budget Planning][image]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+# Budget Planning Dashboard
 
-## Development server
+This project was based on the execpional design made by the [Halo UI/UX](https://dribbble.com/intriligator) group, to access it on Dribble click [here](https://dribbble.com/shots/8168686-Budget-Planning-Dashboard). This project was developed using Angular 11.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[image]: https://i.imgur.com/qLj4jz1.jpeg
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Npm
+* Angular 11
 
-## Running unit tests
+**Install all project dependencies**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+$ npm install
+```
 
-## Running end-to-end tests
+## Running in development mode
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+$ ng serve --o
+```
+You can see the project running in http://localhost:4200/
 
-## Further help
+## Contributing
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To contribute to the project follow the steps below:
+
+1. Make the _fork_ of the project (<https://github.com/Joaovjs/front-beauty-projects/fork>)
+2. Create a _branch_ for your modification (`git checkout -b feature/fooBar`)
+3. Make _commit_ (`git commit -am 'Add some fooBar'`)
+4. _Push_ (`git push origin feature/fooBar`)
+5. Create a new _Pull Request_
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
